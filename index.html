@@ -7,234 +7,406 @@
   <meta name="description" content="Claude Code・Claude API・業務自動化の開発実績ポートフォリオ">
   <meta property="og:title" content="AI Developer Portfolio">
   <meta property="og:description" content="Claude Code・Claude API・自動化ツールの開発実績">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* === CSS Variables === */
+    /* === CSS Variables — Electric Violet === */
     :root {
-      --grad: linear-gradient(90deg, #7c3aed, #0ea5e9);
-      --grad-bg: linear-gradient(180deg, #faf5ff 0%, #f0f9ff 50%, #f8fafc 100%);
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --border: #e2e8f0;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --text-subtle: #94a3b8;
-      --purple: #7c3aed;
-      --blue: #0ea5e9;
-      --radius: 10px;
-      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+      /* Primary */
+      --purple:        #845EC2;
+      --purple-dark:   #6B4CA0;
+      --purple-light:  #B39CD0;
+      --purple-tint:   #FBEAFF;
+
+      /* Cool Accent */
+      --emerald:       #00C9A7;
+      --mint-tint:     #C4FCEF;
+      --teal:          #4D8076;
+
+      /* Warm Accent */
+      --coral:         #FF6F91;
+      --salmon:        #FF9671;
+      --gold:          #FFC75F;
+
+      /* Neutrals */
+      --plum-dark:     #2D1F4E;
+      --plum-mid:      #4B4453;
+      --lavender-gray: #B0A8B9;
+      --warm-sand:     #D5CABD;
+
+      /* Backgrounds */
+      --bg:            #ffffff;
+      --bg-off:        #faf9ff;
+      --bg-tint:       #f0ebf8;
+
+      /* Borders */
+      --border:        #e8e0f0;
+      --border-soft:   #f0ebf8;
+
+      /* Gradients */
+      --grad-warm:     linear-gradient(135deg, #845EC2 0%, #FF6F91 50%, #FFC75F 100%);
+      --grad-brand:    linear-gradient(135deg, #845EC2, #00C9A7);
+      --grad-subtle:   linear-gradient(135deg, #FBEAFF, #C4FCEF);
+
+      /* Shadows */
+      --shadow-sm:     0 2px 8px rgba(132,94,194,0.12);
+      --shadow-md:     0 8px 32px rgba(132,94,194,0.18);
+      --shadow-lg:     0 20px 60px rgba(45,31,78,0.22);
+      --shadow-glow:   0 0 24px rgba(132,94,194,0.4);
+
+      --radius-card:   12px;
+      --radius-btn:    8px;
+      --radius-modal:  16px;
+      --radius-badge:  6px;
+
+      --font: 'Plus Jakarta Sans', 'DM Sans', system-ui, sans-serif;
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     /* === Reset === */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--plum-dark);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
-    /* === Navbar === */
+    /* === Navbar — frosted glass === */
     #navbar {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      height: 56px;
+      padding: 0 48px;
+      height: 60px;
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo {
-      font-size: 16px; font-weight: 800;
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      font-size: 17px; font-weight: 800;
+      letter-spacing: -0.02em;
+      background: var(--grad-brand);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a { font-size: 13px; color: var(--text-muted); transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      font-size: 14px; font-weight: 600; color: var(--plum-mid);
+      letter-spacing: -0.01em;
+      transition: color 0.25s var(--ease);
+    }
+    .nav-links a:hover { color: var(--purple); }
     .nav-cta {
-      font-size: 12px; font-weight: 600; color: white !important;
-      background: var(--grad); padding: 6px 16px; border-radius: 20px;
-      transition: opacity 0.2s;
+      background: var(--purple);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius-btn);
+      font-weight: 700; font-size: 13px;
+      transition: background 0.25s var(--ease), box-shadow 0.25s var(--ease);
     }
-    .nav-cta:hover { opacity: 0.85; }
+    .nav-cta:hover {
+      background: var(--purple-dark);
+      box-shadow: var(--shadow-glow);
+    }
 
-    /* === Hero === */
+    /* === Hero — warm gradient + generated image === */
     #hero {
-      padding: 72px 24px 52px;
+      padding: 96px 48px 80px;
       text-align: center;
-      background: var(--grad-bg);
+      background-image:
+        linear-gradient(135deg, rgba(132,94,194,0.82) 0%, rgba(255,111,145,0.72) 50%, rgba(255,199,95,0.72) 100%),
+        url('images/hero.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
     }
+    #hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(45,31,78,0.08);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
     .hero-badge {
-      display: inline-block;
-      background: linear-gradient(90deg, #ede9fe, #dbeafe);
-      border: 1px solid #c4b5fd;
-      color: var(--purple); font-size: 12px; font-weight: 600;
-      padding: 4px 14px; border-radius: 20px; margin-bottom: 20px;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 16px; border-radius: 20px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
     }
     .hero-title {
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 900; color: var(--text); line-height: 1.2; margin-bottom: 12px;
+      font-size: clamp(32px, 5.5vw, 60px);
+      font-weight: 800;
+      color: white;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
     }
-    .hero-title .grad-text {
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    .hero-title .accent {
+      display: inline-block;
+      background: linear-gradient(90deg, #fff, #C4FCEF);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .hero-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 36px; }
-    .hero-stats { display: flex; justify-content: center; gap: 40px; align-items: center; }
-    .hero-stat { text-align: center; }
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 48px;
+      letter-spacing: -0.01em;
+    }
+    .hero-stats {
+      display: inline-flex;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--radius-card);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+    .hero-stat {
+      padding: 20px 36px;
+      text-align: center;
+    }
+    .hero-stat + .hero-stat { border-left: 1px solid rgba(255,255,255,0.25); }
     .hero-stat .num {
-      font-size: 32px; font-weight: 900;
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      font-size: 30px; font-weight: 800;
+      color: white; line-height: 1;
+      letter-spacing: -0.02em;
     }
-    .hero-stat .label { font-size: 11px; color: var(--text-subtle); margin-top: 2px; }
-    .stat-divider { width: 1px; height: 40px; background: var(--border); }
+    .hero-stat .label {
+      font-size: 11px; font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
 
     /* === Works Section === */
-    #works { padding: 0 24px 60px; max-width: 1100px; margin: 0 auto; }
+    #works {
+      padding: 72px 48px 80px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .section-heading {
+      text-align: center; margin-bottom: 40px;
+    }
+    .section-divider {
+      width: 48px; height: 3px;
+      background: var(--grad-brand);
+      border-radius: 2px;
+      margin: 0 auto 16px;
+    }
+    .section-heading h2 {
+      font-size: 26px; font-weight: 800;
+      letter-spacing: -0.02em; color: var(--plum-dark);
+      margin-bottom: 4px;
+    }
+    .section-heading p {
+      font-size: 13px; color: var(--lavender-gray);
+      font-weight: 500;
+    }
 
     /* Filter Bar */
     #filter-bar {
-      display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
-      padding: 28px 0 20px;
+      display: flex; gap: 8px; flex-wrap: wrap;
+      justify-content: center; margin-bottom: 40px;
     }
-    .filter-label { font-size: 12px; color: var(--text-subtle); margin-right: 4px; }
     .filter-btn {
-      font-size: 12px; font-weight: 500;
-      padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border);
-      background: var(--surface); color: var(--text-muted);
-      cursor: pointer; transition: all 0.2s;
+      font-family: var(--font);
+      font-size: 13px; font-weight: 600;
+      padding: 7px 18px;
+      border-radius: var(--radius-btn);
+      border: 1.5px solid var(--border);
+      background: var(--bg); color: var(--plum-mid);
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
     }
-    .filter-btn:hover { border-color: var(--purple); color: var(--purple); }
+    .filter-btn:hover { border-color: var(--purple); color: var(--purple); background: var(--purple-tint); }
     .filter-btn.active {
-      background: var(--grad); border-color: transparent; color: white; font-weight: 600;
+      background: var(--purple); border-color: var(--purple);
+      color: white; box-shadow: var(--shadow-sm);
     }
 
     /* Card Grid */
     #card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
 
     /* Cards */
     .project-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow); cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
     }
-    .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--purple-light);
+    }
     .card-thumb {
-      height: 120px; display: flex; align-items: center; justify-content: center;
-      font-size: 40px; position: relative;
+      height: 130px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 44px; position: relative;
     }
     .card-thumb img { width: 100%; height: 100%; object-fit: cover; }
     .card-category-badge {
-      position: absolute; top: 8px; right: 8px;
-      font-size: 10px; font-weight: 600; color: white;
-      padding: 2px 8px; border-radius: 8px;
+      position: absolute; top: 10px; right: 10px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
+      color: var(--purple);
+      background: var(--purple-tint);
+      padding: 3px 9px; border-radius: var(--radius-badge);
     }
-    .card-body { padding: 14px; }
-    .card-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .card-body { padding: 18px; }
+    .card-title {
+      font-size: 14px; font-weight: 700;
+      color: var(--plum-dark); margin-bottom: 5px;
+      letter-spacing: -0.01em; line-height: 1.5;
+    }
     .card-summary {
-      font-size: 12px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5;
+      font-size: 12px; color: var(--plum-mid); margin-bottom: 12px;
+      line-height: 1.65;
       display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
-    .card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+    .card-tags { display: flex; gap: 5px; flex-wrap: wrap; }
     .card-tag {
-      font-size: 10px; padding: 2px 7px; border-radius: 6px;
-      background: #f1f5f9; color: var(--text-muted);
+      font-size: 10px; font-weight: 600; padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--bg-tint); color: var(--lavender-gray);
     }
 
     /* === Modal === */
     #modal-overlay {
       position: fixed; inset: 0; z-index: 200;
-      background: rgba(15,23,42,0.6);
-      backdrop-filter: blur(4px);
+      background: rgba(45,31,78,0.52);
+      backdrop-filter: blur(6px);
       display: flex; align-items: center; justify-content: center;
       padding: 20px;
     }
     .modal {
-      background: var(--surface); border-radius: 16px;
-      max-width: 640px; width: 100%; max-height: 90vh;
-      overflow-y: auto; box-shadow: var(--shadow-lg);
-      animation: modal-in 0.2s ease;
+      background: rgba(255,255,255,0.98);
+      border-radius: var(--radius-modal);
+      max-width: 620px; width: 100%; max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      animation: modal-in 0.3s var(--ease);
     }
     @keyframes modal-in {
-      from { opacity: 0; transform: scale(0.96) translateY(8px); }
+      from { opacity: 0; transform: scale(0.95) translateY(8px); }
       to   { opacity: 1; transform: scale(1) translateY(0); }
     }
     .modal-thumb {
-      height: 200px; display: flex; align-items: center; justify-content: center;
-      font-size: 64px; border-radius: 16px 16px 0 0; position: relative;
-    }
-    .modal-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px 16px 0 0; }
-    .modal-close {
-      position: absolute; top: 12px; right: 12px;
-      background: rgba(255,255,255,0.9); border-radius: 50%;
-      width: 32px; height: 32px; font-size: 14px;
+      height: 220px;
       display: flex; align-items: center; justify-content: center;
-      cursor: pointer; border: 1px solid var(--border);
-      transition: background 0.2s;
+      font-size: 72px; position: relative;
+      border-radius: var(--radius-modal) var(--radius-modal) 0 0;
     }
-    .modal-close:hover { background: white; }
-    .modal-body { padding: 24px; }
+    .modal-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-modal) var(--radius-modal) 0 0; }
+    .modal-close {
+      position: absolute; top: 14px; right: 14px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%; width: 32px; height: 32px;
+      font-size: 13px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border: 1px solid rgba(255,255,255,0.6);
+      color: var(--plum-mid);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .modal-close:hover { background: white; box-shadow: var(--shadow-sm); }
+    .modal-body { padding: 32px; }
     .modal-category {
-      font-size: 11px; font-weight: 600; color: var(--purple);
-      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;
+      font-size: 11px; font-weight: 700;
+      color: var(--emerald); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 8px;
     }
-    .modal-title { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
-    .modal-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
+    .modal-title {
+      font-size: 22px; font-weight: 800;
+      color: var(--plum-dark); margin-bottom: 6px;
+      letter-spacing: -0.02em; line-height: 1.3;
+    }
+    .modal-divider {
+      width: 40px; height: 3px;
+      background: var(--grad-brand);
+      border-radius: 2px; margin-bottom: 16px;
+    }
+    .modal-desc {
+      font-size: 14px; color: var(--plum-mid);
+      line-height: 1.8; margin-bottom: 20px;
+    }
     .modal-tags-label {
-      font-size: 11px; font-weight: 600; color: var(--text-subtle);
-      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;
+      font-size: 10px; font-weight: 700;
+      color: var(--lavender-gray); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 10px;
     }
-    .modal-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+    .modal-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px; }
     .modal-tag {
-      font-size: 12px; padding: 4px 10px; border-radius: 8px;
-      background: linear-gradient(90deg, #ede9fe, #dbeafe);
-      color: var(--purple); font-weight: 500;
+      font-size: 12px; font-weight: 600; padding: 4px 12px;
+      border-radius: var(--radius-badge);
+      background: var(--purple-tint); color: var(--purple);
     }
     .modal-links { display: flex; gap: 10px; }
     .modal-link {
-      flex: 1; text-align: center; font-size: 13px; font-weight: 600;
-      padding: 10px; border-radius: 8px; border: 1px solid var(--border);
-      color: var(--text-muted); transition: all 0.2s; cursor: pointer;
+      flex: 1; text-align: center; font-size: 13px; font-weight: 700;
+      padding: 11px; border-radius: var(--radius-btn);
+      border: 1.5px solid var(--border); color: var(--plum-mid);
+      cursor: pointer; font-family: var(--font);
+      transition: all 0.25s var(--ease);
     }
-    .modal-link:hover { border-color: var(--purple); color: var(--purple); }
+    .modal-link:hover { border-color: var(--purple); color: var(--purple); background: var(--purple-tint); }
     .modal-link.primary {
-      background: var(--grad); border-color: transparent; color: white;
+      background: var(--grad-brand); border-color: transparent; color: white;
     }
-    .modal-link.primary:hover { opacity: 0.85; }
+    .modal-link.primary:hover { opacity: 0.9; box-shadow: var(--shadow-md); }
 
     /* === Footer === */
     #footer {
-      background: #0f172a; padding: 32px 24px;
+      background: var(--plum-dark);
+      padding: 48px;
       display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 16px;
+      flex-wrap: wrap; gap: 20px;
     }
     .footer-logo {
-      font-size: 16px; font-weight: 800;
-      background: linear-gradient(90deg, #a78bfa, #38bdf8);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      font-size: 17px; font-weight: 800; letter-spacing: -0.02em;
+      background: var(--grad-brand);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a { font-size: 13px; color: #64748b; transition: color 0.2s; }
-    .footer-links a:hover { color: #94a3b8; }
-    .footer-copy { font-size: 11px; color: #475569; width: 100%; text-align: center; margin-top: 8px; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 13px; font-weight: 600; color: var(--lavender-gray);
+      transition: color 0.25s var(--ease);
+    }
+    .footer-links a:hover { color: var(--emerald); }
+    .footer-copy {
+      font-size: 11px; color: var(--plum-mid);
+      width: 100%; text-align: center; margin-top: 4px;
+      font-weight: 500;
+    }
 
     /* === Responsive === */
     @media (max-width: 900px) {
       #card-grid { grid-template-columns: repeat(2, 1fr); }
+      #navbar, #hero, #works, #footer { padding-left: 24px; padding-right: 24px; }
     }
     @media (max-width: 600px) {
       #card-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 20px; }
-      .hero-stat .num { font-size: 24px; }
-      #navbar { padding: 0 16px; }
       .nav-links a:not(.nav-cta) { display: none; }
-      #works { padding: 0 16px 48px; }
-      .modal { border-radius: 12px; }
+      .hero-stat { padding: 16px 20px; }
+      .hero-stat .num { font-size: 22px; }
+      .modal-body { padding: 24px; }
       #footer { flex-direction: column; text-align: center; }
       .footer-links { justify-content: center; }
     }
@@ -242,8 +414,13 @@
 </head>
 <body>
   <nav id="navbar"></nav>
-  <section id="hero"></section>
+  <section id="hero"><div class="hero-inner" id="hero-inner"></div></section>
   <section id="works">
+    <div class="section-heading">
+      <div class="section-divider"></div>
+      <h2>Works</h2>
+      <p>AI 開発の実績</p>
+    </div>
     <div id="filter-bar"></div>
     <div id="card-grid"></div>
   </section>
@@ -254,150 +431,109 @@
     /* ===== DATA ===== */
     const projects = [
       {
-        id: 1,
-        title: "動画編集自動化 AI",
-        category: "claude-code",
-        tags: ["Whisper", "ffmpeg", "silero-VAD"],
-        emoji: "🎬",
-        image: null,
-        color: "linear-gradient(135deg, #ede9fe, #dbeafe)",
+        id: 1, title: "動画編集自動化 AI", category: "claude-code",
+        tags: ["Whisper", "ffmpeg", "silero-VAD"], emoji: "🎬",
+        color: "linear-gradient(135deg, #FBEAFF, #e8d5f8)",
         summary: "無音・フィラーを自動検出してPremiere Pro用XMLを出力",
         description: "Claude Codeのスキルとして動画のトーク部分を解析。Whisperで文字起こし、silero-VADで無音検出、ffmpegで音量分析を行い、カット編集用のXMLファイルを自動生成する。",
         links: { github: "", x: "" }
       },
       {
-        id: 2,
-        title: "テロップ自動生成ツール",
-        category: "claude-code",
-        tags: ["Whisper", "SRT", "Claude API"],
-        emoji: "💬",
-        image: null,
-        color: "linear-gradient(135deg, #dbeafe, #e0f2fe)",
+        id: 2, title: "テロップ自動生成ツール", category: "claude-code",
+        tags: ["Whisper", "SRT", "Claude API"], emoji: "💬",
+        color: "linear-gradient(135deg, #C4FCEF, #a8f0e0)",
         summary: "編集済み動画からWhisper+Claudeでテロップ用SRTを生成",
         description: "編集済みシーケンスからWhisperで文字起こし後、Claude APIで整文・句読点付与を行い、フレーム同期したSRTファイルを出力する。",
         links: { github: "", x: "" }
       },
       {
-        id: 3,
-        title: "SEOブログ自動生成",
-        category: "automation",
-        tags: ["Claude API", "SEO", "Markdown"],
-        emoji: "✍️",
-        image: null,
-        color: "linear-gradient(135deg, #dcfce7, #d1fae5)",
+        id: 3, title: "SEOブログ自動生成", category: "automation",
+        tags: ["Claude API", "SEO", "Markdown"], emoji: "✍️",
+        color: "linear-gradient(135deg, #fff3e0, #ffe0b2)",
         summary: "キーワードから1万字のSEOブログをAIが自動執筆",
         description: "指定キーワードとターゲット文字数をもとに、Claude APIがリサーチ→構成→執筆を自動実行。char-counterスキルで文字数を検証しながら最適化する。",
         links: { github: "", x: "" }
       },
       {
-        id: 4,
-        title: "RAGチャットボット",
-        category: "claude-api",
-        tags: ["Anthropic SDK", "Vector DB", "Python"],
-        emoji: "🤖",
-        image: null,
-        color: "linear-gradient(135deg, #ffe4e6, #fce7f3)",
+        id: 4, title: "RAGチャットボット", category: "claude-api",
+        tags: ["Anthropic SDK", "Vector DB", "Python"], emoji: "🤖",
+        color: "linear-gradient(135deg, #FBEAFF, #C4FCEF)",
         summary: "PDF/ドキュメントに基づいて回答するClaudeアプリ",
         description: "社内ドキュメントやPDFをベクトルDBに格納し、Claude APIのRAGパターンで質問応答を実現。Anthropic SDKのprompt cachingで高速・低コストを実現。",
         links: { github: "", x: "" }
       },
       {
-        id: 5,
-        title: "Claude Code カスタムスキル集",
-        category: "claude-code",
-        tags: ["Claude Code", "Markdown", "YAML"],
-        emoji: "⚡",
-        image: null,
-        color: "linear-gradient(135deg, #fef3c7, #fde68a)",
+        id: 5, title: "Claude Code カスタムスキル集", category: "claude-code",
+        tags: ["Claude Code", "Markdown", "YAML"], emoji: "⚡",
+        color: "linear-gradient(135deg, #f3e5f5, #e1bee7)",
         summary: "繰り返し作業を自動化するClaude Codeスキル集",
         description: "analyzer/builder/reviewer パイプライン、summarize、file-summaryなど業務自動化スキルを多数開発。スキルは.mdファイルとして管理しClaude Codeに読み込ませる。",
         links: { github: "", x: "" }
       },
       {
-        id: 6,
-        title: "ポートフォリオサイト自動生成",
-        category: "automation",
-        tags: ["HTML/CSS/JS", "Claude Code", "自動化"],
-        emoji: "🌐",
-        image: null,
-        color: "linear-gradient(135deg, #e0e7ff, #ede9fe)",
+        id: 6, title: "ポートフォリオサイト自動生成", category: "automation",
+        tags: ["HTML/CSS/JS", "Claude Code", "自動化"], emoji: "🌐",
+        color: "linear-gradient(135deg, #e8f5e9, #c8e6c9)",
         summary: "AIとの対話でポートフォリオサイトを自動構築",
         description: "brainstorming → writing-plans → executing-plans のスキルパイプラインを活用し、要件定義から実装まで全工程をClaude Codeで自動化したサイト（このサイト自体）。",
         links: { github: "", x: "" }
       },
       {
-        id: 7,
-        title: "Xポスト自動生成",
-        category: "automation",
-        tags: ["Claude API", "X API", "Python"],
-        emoji: "𝕏",
-        image: null,
-        color: "linear-gradient(135deg, #f0fdf4, #dcfce7)",
+        id: 7, title: "Xポスト自動生成", category: "automation",
+        tags: ["Claude API", "X API", "Python"], emoji: "𝕏",
+        color: "linear-gradient(135deg, #e3f2fd, #bbdefb)",
         summary: "ブログ記事からバズりやすいXポストを自動生成",
         description: "記事URLを入力するとClaude APIが記事を要約し、エンゲージメントを最大化するXポスト文案を複数パターン生成する。",
         links: { github: "", x: "" }
       },
       {
-        id: 8,
-        title: "Claude API バッチ処理ツール",
-        category: "claude-api",
-        tags: ["Batch API", "Anthropic SDK", "CSV"],
-        emoji: "📊",
-        image: null,
-        color: "linear-gradient(135deg, #fdf4ff, #fae8ff)",
+        id: 8, title: "Claude API バッチ処理ツール", category: "claude-api",
+        tags: ["Batch API", "Anthropic SDK", "CSV"], emoji: "📊",
+        color: "linear-gradient(135deg, #fce4ec, #f8bbd0)",
         summary: "大量データをClaude APIのバッチ処理で低コスト分析",
         description: "Anthropic Message Batch APIを活用し、CSVの大量テキストを50%コスト削減で分類・要約・感情分析する。進捗管理とリトライ機能付き。",
         links: { github: "", x: "" }
       },
       {
-        id: 9,
-        title: "Webスクレイパー＋AI要約",
-        category: "web-app",
-        tags: ["Python", "BeautifulSoup", "Claude API"],
-        emoji: "🔍",
-        image: null,
-        color: "linear-gradient(135deg, #fff7ed, #ffedd5)",
+        id: 9, title: "Webスクレイパー＋AI要約", category: "web-app",
+        tags: ["Python", "BeautifulSoup", "Claude API"], emoji: "🔍",
+        color: "linear-gradient(135deg, #fff8e1, #ffecb3)",
         summary: "Webページを取得してAIが自動要約・構造化",
         description: "指定URLのWebページをスクレイプし、Claude APIで要約・カテゴリ分類・キーワード抽出を行う。結果をJSON/Markdownで出力。",
         links: { github: "", x: "" }
       },
       {
-        id: 10,
-        title: "Gmail × Claude 自動返信",
-        category: "automation",
-        tags: ["Gmail API", "Claude API", "Google Apps Script"],
-        emoji: "📧",
-        image: null,
-        color: "linear-gradient(135deg, #f0fdf4, #ecfdf5)",
+        id: 10, title: "Gmail × Claude 自動返信", category: "automation",
+        tags: ["Gmail API", "Claude API", "Google Apps Script"], emoji: "📧",
+        color: "linear-gradient(135deg, #e8f5e9, #C4FCEF)",
         summary: "受信メールをClaudeが分類・返信案を自動作成",
         description: "Gmail APIで受信メールを取得し、Claude APIで内容を分類・返信文案を生成。Google Apps ScriptからClaude APIを呼び出し、承認後に送信する。",
         links: { github: "", x: "" }
       },
       {
-        id: 11,
-        title: "音声メモ → タスク変換",
-        category: "web-app",
-        tags: ["Whisper", "Claude API", "Notion API"],
-        emoji: "🎙️",
-        image: null,
-        color: "linear-gradient(135deg, #eff6ff, #dbeafe)",
+        id: 11, title: "音声メモ → タスク変換", category: "web-app",
+        tags: ["Whisper", "Claude API", "Notion API"], emoji: "🎙️",
+        color: "linear-gradient(135deg, #ede7f6, #d1c4e9)",
         summary: "音声メモをWhisper文字起こし→Claudeでタスク整理",
         description: "録音した音声メモをWhisperで文字起こしし、Claude APIが内容を解析してタスク・期限・優先度に構造化、Notion DBへ自動登録する。",
         links: { github: "", x: "" }
       },
       {
-        id: 12,
-        title: "コードレビュー自動化",
-        category: "claude-api",
-        tags: ["GitHub API", "Claude API", "Webhook"],
-        emoji: "🔎",
-        image: null,
-        color: "linear-gradient(135deg, #fdf2f8, #fce7f3)",
+        id: 12, title: "コードレビュー自動化", category: "claude-api",
+        tags: ["GitHub API", "Claude API", "Webhook"], emoji: "🔎",
+        color: "linear-gradient(135deg, #FBEAFF, #ede7f6)",
         summary: "PRのdiffをClaudeが自動レビュー・コメント投稿",
         description: "GitHub WebhookでPR openイベントを受け取り、diffをClaude APIに送信してコードレビューコメントを自動生成・投稿する。セキュリティ・品質・パフォーマンスの観点で分析。",
         links: { github: "", x: "" }
       }
     ];
+
+    const CATEGORY_IMAGES = {
+      'claude-code': 'images/projects/claude-code.png',
+      'claude-api':  'images/projects/claude-api.png',
+      'automation':  'images/projects/automation.png',
+      'web-app':     'images/projects/webapp.png',
+    };
 
     const CATEGORIES = [
       { key: "all",         label: "All" },
@@ -407,14 +543,7 @@
       { key: "web-app",     label: "Web App" }
     ];
 
-    const BADGE_COLORS = {
-      "claude-code": "#7c3aed",
-      "claude-api":  "#2563eb",
-      "automation":  "#16a34a",
-      "web-app":     "#ea580c"
-    };
-
-    /* ===== SCROLL ANIMATION (defined early so renderCards can call it) ===== */
+    /* ===== SCROLL ANIMATION ===== */
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -422,13 +551,13 @@
           e.target.style.transform = 'translateY(0)';
         }
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.06 });
 
     function observeCards() {
-      document.querySelectorAll('.project-card').forEach(card => {
+      document.querySelectorAll('.project-card').forEach((card, i) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(16px)';
-        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        card.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
         observer.observe(card);
       });
     }
@@ -446,16 +575,23 @@
 
     /* ===== HERO ===== */
     function renderHero() {
-      document.getElementById('hero').innerHTML = `
-        <div class="hero-badge">🤖 AI Developer</div>
-        <h1 class="hero-title">AI × 自動化で<br><span class="grad-text">プロダクトを作る</span></h1>
-        <p class="hero-sub">Claude Code &middot; Claude API &middot; 業務自動化 &middot; LLMアプリ開発</p>
+      document.getElementById('hero-inner').innerHTML = `
+        <div class="hero-badge">⚡ AI Developer</div>
+        <h1 class="hero-title">AI × 自動化で<br><span class="accent">プロダクトを作る</span></h1>
+        <p class="hero-sub">Claude Code &nbsp;·&nbsp; Claude API &nbsp;·&nbsp; 業務自動化 &nbsp;·&nbsp; LLMアプリ開発</p>
         <div class="hero-stats">
-          <div class="hero-stat"><div class="num">${projects.length}+</div><div class="label">Projects</div></div>
-          <div class="stat-divider"></div>
-          <div class="hero-stat"><div class="num">3+</div><div class="label">AI Tools</div></div>
-          <div class="stat-divider"></div>
-          <div class="hero-stat"><div class="num">2025</div><div class="label">Year</div></div>
+          <div class="hero-stat">
+            <div class="num">${projects.length}<span style="font-size:18px;font-weight:700">+</span></div>
+            <div class="label">Projects</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">3<span style="font-size:18px;font-weight:700">+</span></div>
+            <div class="label">AI Tools</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num" style="font-size:22px">2025</div>
+            <div class="label">Year</div>
+          </div>
         </div>
       `;
     }
@@ -465,7 +601,6 @@
 
     function renderFilterBar() {
       document.getElementById('filter-bar').innerHTML =
-        `<span class="filter-label">絞り込み：</span>` +
         CATEGORIES.map(c =>
           `<button class="filter-btn ${activeFilter === c.key ? 'active' : ''}"
              onclick="setFilter('${c.key}')">${c.label}</button>`
@@ -487,10 +622,8 @@
       document.getElementById('card-grid').innerHTML = filtered.map(p => `
         <div class="project-card" onclick="openModal(${p.id})">
           <div class="card-thumb" style="background:${p.color}">
-            ${p.image
-              ? `<img src="${p.image}" alt="${p.title}">`
-              : `<span>${p.emoji}</span>`}
-            <span class="card-category-badge" style="background:${BADGE_COLORS[p.category] || '#7c3aed'}">
+            ${(p.image || CATEGORY_IMAGES[p.category]) ? `<img src="${p.image || CATEGORY_IMAGES[p.category]}" alt="${p.title}">` : `<span>${p.emoji}</span>`}
+            <span class="card-category-badge">
               ${CATEGORIES.find(c => c.key === p.category)?.label || p.category}
             </span>
           </div>
@@ -515,19 +648,20 @@
       overlay.innerHTML = `
         <div class="modal" onclick="event.stopPropagation()">
           <div class="modal-thumb" style="background:${p.color}">
-            ${p.image ? `<img src="${p.image}" alt="${p.title}">` : p.emoji}
+            ${(p.image || CATEGORY_IMAGES[p.category]) ? `<img src="${p.image || CATEGORY_IMAGES[p.category]}" alt="${p.title}" style="width:100%;height:100%;object-fit:cover">` : p.emoji}
             <button class="modal-close" onclick="closeModal()">✕</button>
           </div>
           <div class="modal-body">
             <div class="modal-category">${CATEGORIES.find(c => c.key === p.category)?.label || p.category}</div>
             <div class="modal-title">${p.title}</div>
+            <div class="modal-divider"></div>
             <div class="modal-desc">${p.description}</div>
             <div class="modal-tags-label">Tech Stack</div>
             <div class="modal-tags">${p.tags.map(t => `<span class="modal-tag">${t}</span>`).join('')}</div>
             <div class="modal-links">
               ${p.links.github ? `<a href="${p.links.github}" target="_blank" class="modal-link primary">GitHub →</a>` : ''}
               ${p.links.x ? `<a href="${p.links.x}" target="_blank" class="modal-link">𝕏 でシェア</a>` : ''}
-              ${!hasLinks ? '<span class="modal-link" style="opacity:0.5;cursor:default">リンク準備中</span>' : ''}
+              ${!hasLinks ? '<span class="modal-link" style="opacity:0.4;cursor:default">リンク準備中</span>' : ''}
             </div>
           </div>
         </div>
