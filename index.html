@@ -432,6 +432,7 @@
       {
         id: 1, title: "動画編集自動化 AI", category: "claude-code",
         tags: ["Whisper", "ffmpeg", "silero-VAD"], emoji: "🎬",
+        image: "images/projects/p1.svg",
         color: "linear-gradient(135deg, #FBEAFF, #e8d5f8)",
         summary: "無音・フィラーを自動検出してPremiere Pro用XMLを出力",
         description: "Claude Codeのスキルとして動画のトーク部分を解析。Whisperで文字起こし、silero-VADで無音検出、ffmpegで音量分析を行い、カット編集用のXMLファイルを自動生成する。",
@@ -440,6 +441,7 @@
       {
         id: 2, title: "テロップ自動生成ツール", category: "claude-code",
         tags: ["Whisper", "SRT", "Claude API"], emoji: "💬",
+        image: "images/projects/p2.svg",
         color: "linear-gradient(135deg, #C4FCEF, #a8f0e0)",
         summary: "編集済み動画からWhisper+Claudeでテロップ用SRTを生成",
         description: "編集済みシーケンスからWhisperで文字起こし後、Claude APIで整文・句読点付与を行い、フレーム同期したSRTファイルを出力する。",
@@ -448,6 +450,7 @@
       {
         id: 3, title: "SEOブログ自動生成", category: "automation",
         tags: ["Claude API", "SEO", "Markdown"], emoji: "✍️",
+        image: "images/projects/p3.svg",
         color: "linear-gradient(135deg, #fff3e0, #ffe0b2)",
         summary: "キーワードから1万字のSEOブログをAIが自動執筆",
         description: "指定キーワードとターゲット文字数をもとに、Claude APIがリサーチ→構成→執筆を自動実行。char-counterスキルで文字数を検証しながら最適化する。",
@@ -456,6 +459,7 @@
       {
         id: 4, title: "RAGチャットボット", category: "claude-api",
         tags: ["Anthropic SDK", "Vector DB", "Python"], emoji: "🤖",
+        image: "images/projects/p4.svg",
         color: "linear-gradient(135deg, #FBEAFF, #C4FCEF)",
         summary: "PDF/ドキュメントに基づいて回答するClaudeアプリ",
         description: "社内ドキュメントやPDFをベクトルDBに格納し、Claude APIのRAGパターンで質問応答を実現。Anthropic SDKのprompt cachingで高速・低コストを実現。",
@@ -464,6 +468,7 @@
       {
         id: 5, title: "Claude Code カスタムスキル集", category: "claude-code",
         tags: ["Claude Code", "Markdown", "YAML"], emoji: "⚡",
+        image: "images/projects/p5.svg",
         color: "linear-gradient(135deg, #f3e5f5, #e1bee7)",
         summary: "繰り返し作業を自動化するClaude Codeスキル集",
         description: "analyzer/builder/reviewer パイプライン、summarize、file-summaryなど業務自動化スキルを多数開発。スキルは.mdファイルとして管理しClaude Codeに読み込ませる。",
@@ -472,6 +477,7 @@
       {
         id: 6, title: "ポートフォリオサイト自動生成", category: "automation",
         tags: ["HTML/CSS/JS", "Claude Code", "自動化"], emoji: "🌐",
+        image: "images/projects/p6.svg",
         color: "linear-gradient(135deg, #e8f5e9, #c8e6c9)",
         summary: "AIとの対話でポートフォリオサイトを自動構築",
         description: "brainstorming → writing-plans → executing-plans のスキルパイプラインを活用し、要件定義から実装まで全工程をClaude Codeで自動化したサイト（このサイト自体）。",
@@ -480,6 +486,7 @@
       {
         id: 7, title: "Xポスト自動生成", category: "automation",
         tags: ["Claude API", "X API", "Python"], emoji: "𝕏",
+        image: "images/projects/p7.svg",
         color: "linear-gradient(135deg, #e3f2fd, #bbdefb)",
         summary: "ブログ記事からバズりやすいXポストを自動生成",
         description: "記事URLを入力するとClaude APIが記事を要約し、エンゲージメントを最大化するXポスト文案を複数パターン生成する。",
@@ -488,6 +495,7 @@
       {
         id: 8, title: "Claude API バッチ処理ツール", category: "claude-api",
         tags: ["Batch API", "Anthropic SDK", "CSV"], emoji: "📊",
+        image: "images/projects/p8.svg",
         color: "linear-gradient(135deg, #fce4ec, #f8bbd0)",
         summary: "大量データをClaude APIのバッチ処理で低コスト分析",
         description: "Anthropic Message Batch APIを活用し、CSVの大量テキストを50%コスト削減で分類・要約・感情分析する。進捗管理とリトライ機能付き。",
@@ -496,6 +504,7 @@
       {
         id: 9, title: "Webスクレイパー＋AI要約", category: "web-app",
         tags: ["Python", "BeautifulSoup", "Claude API"], emoji: "🔍",
+        image: "images/projects/p9.svg",
         color: "linear-gradient(135deg, #fff8e1, #ffecb3)",
         summary: "Webページを取得してAIが自動要約・構造化",
         description: "指定URLのWebページをスクレイプし、Claude APIで要約・カテゴリ分類・キーワード抽出を行う。結果をJSON/Markdownで出力。",
@@ -504,6 +513,7 @@
       {
         id: 10, title: "Gmail × Claude 自動返信", category: "automation",
         tags: ["Gmail API", "Claude API", "Google Apps Script"], emoji: "📧",
+        image: "images/projects/p10.svg",
         color: "linear-gradient(135deg, #e8f5e9, #C4FCEF)",
         summary: "受信メールをClaudeが分類・返信案を自動作成",
         description: "Gmail APIで受信メールを取得し、Claude APIで内容を分類・返信文案を生成。Google Apps ScriptからClaude APIを呼び出し、承認後に送信する。",
@@ -512,6 +522,7 @@
       {
         id: 11, title: "音声メモ → タスク変換", category: "web-app",
         tags: ["Whisper", "Claude API", "Notion API"], emoji: "🎙️",
+        image: "images/projects/p11.svg",
         color: "linear-gradient(135deg, #ede7f6, #d1c4e9)",
         summary: "音声メモをWhisper文字起こし→Claudeでタスク整理",
         description: "録音した音声メモをWhisperで文字起こしし、Claude APIが内容を解析してタスク・期限・優先度に構造化、Notion DBへ自動登録する。",
@@ -520,6 +531,7 @@
       {
         id: 12, title: "コードレビュー自動化", category: "claude-api",
         tags: ["GitHub API", "Claude API", "Webhook"], emoji: "🔎",
+        image: "images/projects/p12.svg",
         color: "linear-gradient(135deg, #FBEAFF, #ede7f6)",
         summary: "PRのdiffをClaudeが自動レビュー・コメント投稿",
         description: "GitHub WebhookでPR openイベントを受け取り、diffをClaude APIに送信してコードレビューコメントを自動生成・投稿する。セキュリティ・品質・パフォーマンスの観点で分析。",

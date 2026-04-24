@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220">
+<defs>
+  <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#f3e5f5"/>
+    <stop offset="100%" stop-color="#ce93d8"/>
+  </linearGradient>
+</defs>
+<rect width="400" height="220" fill="url(#g)"/>
+
+<rect x="30" y="26" width="210" height="168" rx="10" fill="rgba(100,50,150,0.1)" stroke="#9C27B0" stroke-width="2"/>
+<rect x="30" y="26" width="210" height="28" rx="10" fill="rgba(100,50,150,0.28)"/>
+<circle cx="48" cy="40" r="6" fill="#FF5252" opacity="0.7"/>
+<circle cx="64" cy="40" r="6" fill="#FFD740" opacity="0.7"/>
+<circle cx="80" cy="40" r="6" fill="#69F0AE" opacity="0.7"/>
+<rect x="44" y="68" width="52" height="6" rx="2" fill="#BA68C8" opacity="0.5"/>
+<rect x="104" y="68" width="82" height="6" rx="2" fill="#CE93D8" opacity="0.65"/>
+<rect x="44" y="83" width="32" height="6" rx="2" fill="#CE93D8" opacity="0.65"/>
+<rect x="84" y="83" width="62" height="6" rx="2" fill="#CE93D8" opacity="0.5"/>
+<rect x="44" y="98" width="106" height="6" rx="2" fill="#CE93D8" opacity="0.5"/>
+<rect x="44" y="113" width="22" height="6" rx="2" fill="#BA68C8" opacity="0.5"/>
+<rect x="74" y="113" width="74" height="6" rx="2" fill="#CE93D8" opacity="0.65"/>
+<rect x="44" y="128" width="56" height="6" rx="2" fill="#CE93D8" opacity="0.5"/>
+<rect x="44" y="143" width="92" height="6" rx="2" fill="#CE93D8" opacity="0.5"/>
+<rect x="44" y="158" width="62" height="6" rx="2" fill="#BA68C8" opacity="0.5"/>
+<circle cx="300" cy="72" r="20" fill="rgba(156,39,176,0.2)" stroke="#9C27B0" stroke-width="2"/>
+<circle cx="300" cy="72" r="8" fill="#9C27B0" opacity="0.5"/>
+<circle cx="340" cy="120" r="16" fill="rgba(156,39,176,0.2)" stroke="#9C27B0" stroke-width="2"/>
+<circle cx="340" cy="120" r="7" fill="#9C27B0" opacity="0.5"/>
+<circle cx="295" cy="165" r="14" fill="rgba(156,39,176,0.2)" stroke="#9C27B0" stroke-width="2"/>
+<circle cx="295" cy="165" r="6" fill="#9C27B0" opacity="0.5"/>
+<line x1="318" y1="80" x2="332" y2="112" stroke="#9C27B0" stroke-width="1.5" opacity="0.4"/>
+<line x1="330" y1="133" x2="304" y2="154" stroke="#9C27B0" stroke-width="1.5" opacity="0.4"/>
+<line x1="280" y1="80" x2="256" y2="90" stroke="#9C27B0" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.4"/>
+<polygon points="358,38 348,68 365,62 352,95" fill="#FFD740" opacity="0.7" stroke="#FFA000" stroke-width="1"/>
+
+</svg>

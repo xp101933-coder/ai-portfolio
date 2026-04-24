@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220">
+<defs>
+  <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#ede7f6"/>
+    <stop offset="100%" stop-color="#b39ddb"/>
+  </linearGradient>
+</defs>
+<rect width="400" height="220" fill="url(#g)"/>
+
+<rect x="168" y="18" width="48" height="100" rx="24" fill="rgba(103,58,183,0.22)" stroke="#7E57C2" stroke-width="2.5"/>
+<line x1="192" y1="118" x2="192" y2="146" stroke="#7E57C2" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 148 96 Q 124 96 124 132 Q 124 162 192 162 Q 260 162 260 132 Q 260 96 236 96" fill="none" stroke="#7E57C2" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="165" y1="162" x2="219" y2="162" stroke="#7E57C2" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 108 84 Q 86 110 108 136" fill="none" stroke="#9C27B0" stroke-width="2.5" opacity="0.4" stroke-linecap="round"/>
+<path d="M 80 66 Q 48 110 80 154" fill="none" stroke="#9C27B0" stroke-width="2" opacity="0.28" stroke-linecap="round"/>
+<path d="M 276 84 Q 298 110 276 136" fill="none" stroke="#9C27B0" stroke-width="2.5" opacity="0.4" stroke-linecap="round"/>
+<path d="M 304 66 Q 336 110 304 154" fill="none" stroke="#9C27B0" stroke-width="2" opacity="0.28" stroke-linecap="round"/>
+<rect x="26" y="28" width="88" height="94" rx="8" fill="rgba(126,87,194,0.1)" stroke="#7E57C2" stroke-width="1.5"/>
+<rect x="36" y="44" width="68" height="7" rx="3" fill="#7E57C2" opacity="0.5"/>
+<circle cx="41" cy="62" r="5" fill="#7E57C2" opacity="0.5"/>
+<rect x="52" y="58" width="52" height="5" rx="2" fill="#7E57C2" opacity="0.35"/>
+<circle cx="41" cy="78" r="5" fill="#7E57C2" opacity="0.5"/>
+<rect x="52" y="74" width="42" height="5" rx="2" fill="#7E57C2" opacity="0.35"/>
+<circle cx="41" cy="94" r="5" fill="#69F0AE" opacity="0.75"/>
+<rect x="52" y="90" width="55" height="5" rx="2" fill="#7E57C2" opacity="0.35"/>
+<circle cx="41" cy="110" r="5" fill="#69F0AE" opacity="0.75"/>
+<rect x="52" y="106" width="48" height="5" rx="2" fill="#7E57C2" opacity="0.35"/>
+<line x1="114" y1="75" x2="158" y2="75" stroke="#7E57C2" stroke-width="2" stroke-dasharray="4,3" opacity="0.5"/>
+<polygon points="156,70 166,75 156,80" fill="#7E57C2" opacity="0.5"/>
+
+</svg>
